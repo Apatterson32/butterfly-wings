@@ -7,11 +7,11 @@ A weather dashboard that will run in the browser using the OpenWeather API
     - [Deployment Screenshot](#deployment-screenshot)
     - [Development Process](#development-process)
 
-## [Installation] {#installation}
+## Installation {#installation}
 
-## [Additional Information]{#Installation}
+## Additional Information {#Installation}
 Repository Owner: [Alissa Patterson](https://github.com/Apatterson32)
 
-### [Deployment Screenshot]{#deployment-screenshot}
+### Deployment Screenshot {#deployment-screenshot}
 
-### [Development Process]{#development-process}
+### Development Process {#development-process}
