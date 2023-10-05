@@ -12,6 +12,6 @@ A weather dashboard that will run in the browser using the OpenWeather API
 ## Additional Information
 Repository Owner: [Alissa Patterson](https://github.com/Apatterson32)
 
-### Deployment Screenshot
+Deployment Screenshot
 
-### Development Process
+Development Process
