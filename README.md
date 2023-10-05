@@ -2,8 +2,8 @@
 A weather dashboard that will run in the browser using the OpenWeather API
 
 ## Table of Contents
-[Installation](#installation)
-[Additional Information](#additional-information)
+- [Installation](#installation)
+- [Additional Information](#additional-information)
     - [Deployment Screenshot](#deployment-screenshot)
     - [Development Process](#development-process)
 
