@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <script
-    src="https://code.jquery.com/jquery-3.5.1.min.js">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"></script>
 </head>
 <body>
     <header class="narrow-header">
@@ -18,7 +17,7 @@
             <!-- Search box and dynamically saved locations -->
             <div class="left-column">   
                 <h2>Search for a City</h2>
-                <input class="search-box" type="search" name="search" id="search" placeholder="New York City">
+                <input class="searchBox" type="text" id="search" placeholder="New York City">
                 <br>
                 <button class="btnForecast" type="submit" id="fetch-button">Search</button>
                 <table id="cityTable"></table>
@@ -26,10 +25,11 @@
             <!-- Dynamically shown city weather-->
             <div class="right-column"> 
                 <div class="card-body">
-                    <h3 class="card-title">City Name</h3>
-                    <p class="card-text">Temperature</p>
-                    <p class="card-text">Wind</p>
-                    <p class="card-text">Humidity</p>
+                    <h3 id="current-day">Date</h3>
+                    <h3 class="card-title"></h3>
+                    <p class="card-text.temperature"></p>
+                    <p class="card-text.wind"></p>
+                    <p class="card-text.humidity"></p>
                     
                 </div>   
                 <h2>5-Day Forecast</h2>
