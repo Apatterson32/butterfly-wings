@@ -51,7 +51,7 @@ const app = {
 
                 currentDayElement.textContent = currentDay.format('MMMM D, YYYY');
                 cityNameElement.textContent = data.name;
-                temperatureElement.textContent = `Temperature: ${data.main.temp} °F`;
+                temperatureElement.textContent = `Temperature: ${Math.round(data.main.temp)} °F`;
                 windElement.textContent = `Wind: ${data.wind.speed} mph`;
                 humidityElement.textContent = `Humidity: ${data.main.humidity}%`;
             })
@@ -82,7 +82,7 @@ const app = {
                     // Extract the data from the forecastData for this day
                     const dayData = forecastData.list[i - 1];
                     const date = dayData.dt_txt; // Extract the needed date
-                    const temperature = dayData.main.temp; // Extract temperature
+                    const temperature = Math.round(dayData.main.temp); // Extract temperature
                     const weatherConditionCode = dayData.weather[0].icon; // Extract weather condition code
                     const wind = dayData.wind.speed;
                     const humidity = dayData.main.humidity;
