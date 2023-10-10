@@ -58,6 +58,8 @@ const app = {
             })
             .then(forecastData => {
                 console.log('5-Day Forecast Data:', forecastData);
+                
+
             })
             .catch(error => {
                 console.error('Error fetching 5-day forecast data:', error.message);
