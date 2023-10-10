@@ -69,7 +69,7 @@ button {
 
 }
 
-.box {
+.day1, .day2, .day3, .day4, .day5 {
     width: 25%;
     height: 150px;
     background-color: rgb(104, 115, 130);
