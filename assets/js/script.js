@@ -1,5 +1,5 @@
 const currentDay = dayjs();
-$('#current-day').text(currentDay.format('MMMM D,YYYY'));
+$('#current-day').text(currentDay.format('MMMM D, YYYY'));
 
 const app = {
     init: () => {
@@ -15,15 +15,10 @@ const app = {
     fetchWeather: () => {
         const apiKey = '5e92f49814b3677b10291eeca8f832e7';
         const units = 'imperial';
-
-
         const cityName = document.getElementById('search').value;
 
         const currentWeatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
-
-        // API URL for 5-day forecast
         const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}`;
-
 
         // Fetch current weather data
         fetch(currentWeatherApiUrl)
@@ -37,13 +32,13 @@ const app = {
                 // Process and display the current weather data here
                 console.log('Current Weather Data:', data);
 
+                const currentDayElement = document.getElementById('current-day');
                 const cityNameElement = document.querySelector('.card-title');
                 const temperatureElement = document.querySelector('.card-text.temperature');
                 const windElement = document.querySelector('.card-text.wind');
                 const humidityElement = document.querySelector('.card-text.humidity');
 
-                
-                // Update the elements with the weather data
+                currentDayElement.textContent = currentDay.format('MMMM D, YYYY');
                 cityNameElement.textContent = data.name;
                 temperatureElement.textContent = `Temperature: ${data.main.temp} °F`;
                 windElement.textContent = `Wind: ${data.wind.speed} mph`;
@@ -65,12 +60,13 @@ const app = {
                 console.log('5-Day Forecast Data:', forecastData);
             })
             .catch(error => {
-                console.error('Error fetching 5-day forecast data:', error);
+                console.error('Error fetching 5-day forecast data:', error.message);
             });
     }
 };
 
 // Initialize the app
 app.init();
+
 
 
