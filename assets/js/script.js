@@ -99,7 +99,10 @@ const app = {
           const avgWind = dayData.wind.reduce((acc, wind) => acc + wind, 0) / dayData.wind.length;
           const avgHumidity = dayData.humidity.reduce((acc, humidity) => acc + humidity, 0) / dayData.humidity.length;
 
-          dayElement.textContent = date;
+                // Formats date to look nice
+        const formattedDate = dayjs(date).format('MMMM D, YYYY');
+        dayElement.textContent = formattedDate;
+          
           iconElement.src = `https://openweathermap.org/img/w/${dayData.icons[0]}.png`;
           temperatureElement.textContent = `Temperature: ${avgTemperature.toFixed(0)} °F`;
           windElement.textContent = `Wind: ${avgWind.toFixed(0)} mph`;
