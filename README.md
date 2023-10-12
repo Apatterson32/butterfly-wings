@@ -8,8 +8,8 @@ A weather dashboard that will run in the browser using the OpenWeather API
     - [Development Process](#development-process)
 
 ## Installation
--Clone Repo
--Open in preferred browser
+- Clone Repo 
+- Open in preferred browser
 
 ## Additional Information
 Repository Owner: [Alissa Patterson](https://github.com/Apatterson32)
