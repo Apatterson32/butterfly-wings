@@ -8,6 +8,8 @@ A weather dashboard that will run in the browser using the OpenWeather API
     - [Development Process](#development-process)
 
 ## Installation
+-Clone Repo
+-Open in preferred browser
 
 ## Additional Information
 Repository Owner: [Alissa Patterson](https://github.com/Apatterson32)
@@ -21,6 +23,7 @@ Repository Owner: [Alissa Patterson](https://github.com/Apatterson32)
 
 <details>
 <summary>Development Process</summary>
+
 Created a repo and cloned to local computer
 
 Created html and css structures
@@ -29,13 +32,13 @@ Created a key from openweathermap's api and attempted to get fetches working pro
 
 Did more research and studying on API's and also the use of queryselector
 
-Current weather fetch worked and struggled on 5-day forecast, ended up using REDUCE for averaging the collected 3 hour data! Woo hoo
+Current weather fetch worked and struggled on 5-day forecast
 
-Understood that I could group the data of 3 hour intervals into a 5 day format that I could use to populate the correct data
+Understood that I could group the data of 3 hour intervals into a 5 day format that I could use to populate the correct data. Ended up using REDUCE for averaging the collected 3 hour data! Woo hoo
 
 Adjusted cosmetic stuff from how the data rendered
 
 Added the saving and rendering of cities searched
 
-Updated my READMe and used previous guidance from graded homework to improve my README's
+Updated my README and used previous guidance from graded homework to improve my README's
 </details>
