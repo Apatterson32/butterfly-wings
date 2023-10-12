@@ -2,12 +2,17 @@ const currentDay = dayjs();
 $('#current-day').text(currentDay.format('MMMM D, YYYY'));
 
 const app = {
+  searchedCities: [],
+
   init: () => {
     document.addEventListener('DOMContentLoaded', () => {
       const fetchButton = document.getElementById('fetch-button');
       if (fetchButton) {
         fetchButton.addEventListener('click', app.fetchWeather);
       }
+
+      // Initialize the previously searched cities
+      app.renderSearchedCities();
     });
   },
 
@@ -28,6 +33,10 @@ const app = {
         return response.json();
       })
       .then(data => {
+        // Save user searched city and render it
+        app.saveSearchedCity(cityName);
+        app.renderSearchedCities();
+
         console.log('Current Weather Data:', data);
 
         const currentDayElement = document.getElementById('current-day');
@@ -100,8 +109,8 @@ const app = {
           const avgHumidity = dayData.humidity.reduce((acc, humidity) => acc + humidity, 0) / dayData.humidity.length;
 
                 // Formats date to look nice
-        const formattedDate = dayjs(date).format('MMMM D, YYYY');
-        dayElement.textContent = formattedDate;
+          const formattedDate = dayjs(date).format('MMMM D, YYYY');
+          dayElement.textContent = formattedDate;
           
           iconElement.src = `https://openweathermap.org/img/w/${dayData.icons[0]}.png`;
           temperatureElement.textContent = `Temperature: ${avgTemperature.toFixed(0)} °F`;
@@ -115,6 +124,32 @@ const app = {
         console.error('Error fetching 5-day forecast data:', error.message);
       });
   },
+
+  saveSearchedCity: (city) => {
+    // Save searched city to the array
+    app.searchedCities.push(city);
+  },
+
+  renderSearchedCities: () => {
+    const cityListElement = document.getElementById('city-list');
+    
+    // Clear the previous city list
+    cityListElement.innerHTML = '';
+    
+    // Clickable elements for each saved city
+    app.searchedCities.forEach((city) => {
+      const cityElement = document.createElement('div');
+      cityElement.textContent = city;
+      cityElement.classList.add('clickable-city');
+      cityElement.addEventListener('click', () => {
+        // When clicked, populates weather data for the clicked city
+        document.getElementById('search').value = city;
+        app.fetchWeather();
+      });
+      cityListElement.appendChild(cityElement);
+    });
+  }
+
 };
 
 app.init();

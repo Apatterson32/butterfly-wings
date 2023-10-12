@@ -75,9 +75,11 @@ button {
     color: #ffffff;
     text-align: center;
     border-radius: 5px;
-    margin-left: 10px; /* Add space between boxes */
+    margin-left: 10px; 
 }
 
-
-
-
+.savedCity {
+    padding: 3px;
+    border-radius: 5px; 
+    margin: 5px 0; 
+}
